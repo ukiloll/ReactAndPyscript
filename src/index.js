@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './pages/runpy/App';
+import Home from './pages/home/App';
 import reportWebVitals from './reportWebVitals';
+import {RouterProvider,createBrowserRouter} from "react-router-dom"
+
+const route = createBrowserRouter([
+  {
+    path:"/",
+    element:<Home/>
+  },
+  {
+    path:"/runpy",
+    element:<App/>
+  },
+
+])
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={route} />
   </React.StrictMode>
 );
 
